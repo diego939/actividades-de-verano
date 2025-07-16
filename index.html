@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +10,44 @@
     <link rel="stylesheet" href="estilos.css">
     <link rel="shortcut icon" href="Fundaac-logo.png">
     <title>Actividades de verano</title>
+    <style>
+        body {
+            background: #f8fafc;
+        }
+        .banner-principal {
+            background: linear-gradient(90deg, rgba(5,172,122,0.85) 0%, rgba(26,109,216,0.85) 100%), url('imagen de verano.jpeg') center/cover no-repeat;
+            min-height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        }
+        .banner-principal h1 {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 1px 2px 8px #1a6dd8;
+        }
+        @media (max-width: 576px) {
+            .banner-principal {
+                min-height: 140px;
+                border-radius: 10px;
+            }
+            .banner-principal h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
-<body class="text-capitalize" style="background-image: url(agua.avif);">
+<body class="text-capitalize" style="background-image: url('agua.avif'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat;">
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-white" style="background-color: rgb(5, 172, 122);">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="Fundaac-logo.png" alt="" style="height: 50px; width:50px;">
+            <img src="Fundaac-logo.png" alt="Logo" style="height: 50px; width:50px;">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -25,7 +57,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="https://www.instagram.com/fundacionctesdiversa.ok/" target="_blank">
                     <i class="bi bi-instagram"></i>
-                    Siguenos IG
+                    Síguenos IG
                 </a>
               </li>
               <li class="nav-item">
@@ -37,34 +69,19 @@
             </ul>
           </div>
         </div>
-      </nav>
-<div class="row m-2">
-    <img class="fondo col" src="imagen de verano.jpeg" alt="">
-</div>
+    </nav>
 
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-primary text-white"> ¿Cómo inscribirse? </div>
-            <p>Requisito: Ser mayor de 12 años.</p>
-            <strong>
-                <p>Los pagos se realizan a través de transferencia:</p>
-                <p>CVU: <input type="text" id="copyCvu" value="0000003100036608288256" disabled style="border: 0; text-align: center; font-weight: bold;"><button class="btn btn-outline-dark bi-clipboard" onclick="copiarCvu()"> copiar</button></p>
-                <p>Alias: <input type="text" id="copyAlias" value="DylanEliasCardozo" disabled style="border: 0; text-align: center; font-weight: bold;"><button class="btn btn-outline-dark bi-clipboard" onclick="copiarAlias()"> copiar</button></p>
-                <p>los comprobantes deben ser enviados al <a class="btn btn-outline-dark bi-whatsapp" href="https://wa.me/+543794765770" target="_blank" rel="noopener noreferrer"> 3794765770 </a></p>
-            </strong>
-            <div class="card-header"> 
-                <p>Podés inscribirte en el siguiente enlace</p>
-            </div>
-            <div class="card-footer">
-                <a href="https://forms.gle/Ztr95Cfgfngx2WA36" target="_blank" class="btn btn-primary">aquí</a>
-                <hr>
-                <p>Si ya te inscribiste te invitamos a unirte a nuestro grupo de whatsapp de la colonia:</p>
-                <a href="https://chat.whatsapp.com/IBYch5xlgkf5RcgvnKophi" target="_blank" rel="noopener noreferrer" class="btn btn-success bi-whatsapp"> Actividades Verano 2024</a>
-            </div>
+<!-- Imagen destacada adaptativa y completa -->
+<div class="container mb-4 border border-4 rounded-4 border-primary" style="background: transparent !important;">
+    <div class="row justify-content-center">
+        <div class="col-12 d-flex justify-content-center align-items-center" style="background: transparent !important; min-height: 90%; max-height: 1024px; border-radius: 2rem; overflow: hidden;">
+            <img class="img-fluid" src="imagen de verano.jpeg" alt="Imagen de verano" style="object-fit: contain; width: 100%; height: 100%; background: transparent !important;">
         </div>
     </div>
 </div>
+
+
+
 <script>
      function copiarCvu(){
             let text = document.getElementById('copyCvu')
@@ -85,8 +102,52 @@
         }
 </script>
 
-<div class="card bg-transparent" style="border: 0;">
-    <div class="card-body">
+<!-- Sección de inscripción -->
+<div class="container mb-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-body">
+                    <div class="h4 bg-primary text-white p-2 rounded mb-3 text-center">¿Cómo inscribirse?</div>
+                    <p class="mb-1">Requisito: Ser mayor de 12 años.</p>
+                    <strong>
+                        <p>Los pagos se realizan a través de transferencia:</p>
+                        <div class="row g-2 align-items-center mb-2">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label mb-0">CVU:</label>
+                                <div class="input-group">
+                                    <input type="text" id="copyCvu" value="0000003100036608288256" disabled class="form-control text-center fw-bold bg-light">
+                                    <button class="btn btn-outline-dark bi-clipboard" onclick="copiarCvu()"> copiar</button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label mb-0">Alias:</label>
+                                <div class="input-group">
+                                    <input type="text" id="copyAlias" value="DylanEliasCardozo" disabled class="form-control text-center fw-bold bg-light">
+                                    <button class="btn btn-outline-dark bi-clipboard" onclick="copiarAlias()"> copiar</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-2">Los comprobantes deben ser enviados al <a class="btn btn-outline-dark bi-whatsapp" href="https://wa.me/+543794765770" target="_blank" rel="noopener noreferrer"> 3794765770 </a></p>
+                    </strong>
+                    <div class="card-header bg-light border-0 mt-3 mb-2 rounded">
+                        <p class="mb-1">Podés inscribirte en el siguiente enlace</p>
+                    </div>
+                    <div class="card-footer bg-white border-0">
+                        <a href="https://forms.gle/Ztr95Cfgfngx2WA36" target="_blank" class="btn btn-primary mb-2">Inscribite aquí</a>
+                        <hr>
+                        <p class="mb-1">Si ya te inscribiste te invitamos a unirte a nuestro grupo de whatsapp de la colonia:</p>
+                        <a href="https://chat.whatsapp.com/IBYch5xlgkf5RcgvnKophi" target="_blank" rel="noopener noreferrer" class="btn btn-success bi-whatsapp"> Actividades Verano 2024</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Carrusel con fondo transparente -->
+<div class="card bg-transparent container" style="border: 0; background: transparent !important;">
+    <div class="card-body" style="background: transparent !important;">
          <!-- Carousel -->
         <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
@@ -104,25 +165,25 @@
             <!-- The slideshow/carousel -->
             <div class="carousel-inner rounded border">
             <div class="carousel-item active">
-                <img src="images/0.jpeg" alt="" class="d-block w-100">
+                <img src="images/0.jpeg" alt="" class="d-block mx-auto w-90">
             </div>
             <div class="carousel-item">
-                <img src="images/1.jpeg" alt="" class="d-block w-100">
+                <img src="images/1.jpeg" alt="" class="d-block mx-auto w-90">
             </div>
             <div class="carousel-item">
-                <img src="images/2.jpeg" alt="" class="d-block w-100">
+                <img src="images/2.jpeg" alt="" class="d-block mx-auto w-90">
             </div>
             <div class="carousel-item">
-                <img src="images/3.jpeg" alt="" class="d-block w-100">
+                <img src="images/3.jpeg" alt="" class="d-block mx-auto w-90">
             </div>
             <div class="carousel-item">
-                <img src="images/4.jpeg" alt="" class="d-block w-100">
+                <img src="images/4.jpeg" alt="" class="d-block mx-auto w-90">
             </div>
             <div class="carousel-item">
-                <img src="images/4.1.jpeg" alt="" class="d-block w-100">
+                <img src="images/4.1.jpeg" alt="" class="d-block mx-auto w-90">
             </div>
             <div class="carousel-item">
-                <img src="images/5.jpeg" alt="" class="d-block w-100">
+                <img src="images/5.jpeg" alt="" class="d-block mx-auto w-90">
             </div>
             </div>
         
@@ -139,171 +200,197 @@
 </div>
 
 
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Padel </div>
-            <div class="card-header h6"> Lunes miércoles y viernes de 10 a 12 en las lajas</div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/4drfxRM3zCF6ikt37" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+<!-- Sección de actividades -->
+<div class="container mb-5">
+    <div class="row g-4">
+        <!-- Aquí irán las tarjetas de actividades, ejemplo para una actividad: -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Padel</div>
+                </div>
+                <div class="card-header h6 text-center">Lunes miércoles y viernes de 10 a 12 en las lajas</div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/4drfxRM3zCF6ikt37" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Ténis </div>
-            <div class="card-header h6">Martes y jueves (a confirmar)</div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/4drfxRM3zCF6ikt37" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt disabled"></a></div>
+        <!-- Repetir el bloque col para cada actividad cambiando los datos -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Ténis</div>
+                </div>
+                <div class="card-header h6 text-center">Martes y jueves (a confirmar)</div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/4drfxRM3zCF6ikt37" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt disabled"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Kick boxing </div>
-            <div class="card-header h6">Martes y jueves de 9 a 10:30 hs Club Juventus  </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/bvuqUpYabQegd7hDA" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Kick boxing</div>
+                </div>
+                <div class="card-header h6 text-center">Martes y jueves de 9 a 10:30 hs Club Juventus  </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/bvuqUpYabQegd7hDA" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Natación </div>
-            <div class="card-header h6"> <span class="text-danger"> Precio Exclusivo "$8000"</span>, de lunes a viernes de 14 a 15 hs C.E.F Nº 1</div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Natación</div>
+                </div>
+                <div class="card-header h6 text-center"> <span class="text-danger"> Precio Exclusivo "$8000"</span>, de lunes a viernes de 14 a 15 hs C.E.F Nº 1</div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Pileta libre </div>
-            <div class="card-header h6"> Pileta libre de colonia de lunes a viernes de 14 a 15 hs C.E.F Nº 1 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Pileta libre</div>
+                </div>
+                <div class="card-header h6 text-center"> Pileta libre de colonia de lunes a viernes de 14 a 15 hs C.E.F Nº 1 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Fútbol </div>
-            <div class="card-header h6"> Lunes a viernes de 15 a 16 hs C.E.F Nº 1 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Fútbol</div>
+                </div>
+                <div class="card-header h6 text-center"> Lunes a viernes de 15 a 16 hs C.E.F Nº 1 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Hockey </div>
-            <div class="card-header h6"> Lunes a viernes de  15 a 17 hs C.E.F Nº 1 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Hockey</div>
+                </div>
+                <div class="card-header h6 text-center"> Lunes a viernes de  15 a 17 hs C.E.F Nº 1 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Básquet </div>
-            <div class="card-header h6"> Lunes, martes y jueves de 16 a 18 hs C.E.F Nº 1 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Básquet</div>
+                </div>
+                <div class="card-header h6 text-center"> Lunes, martes y jueves de 16 a 18 hs C.E.F Nº 1 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Preparación física </div>
-            <div class="card-header h6"> Martes y jueves de 18 a 19hs C.E.F Nº 18 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/HTsRaquYcQ2zVP5K6" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Preparación física</div>
+                </div>
+                <div class="card-header h6 text-center"> Martes y jueves de 18 a 19hs C.E.F Nº 18 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/HTsRaquYcQ2zVP5K6" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Fútbol </div>
-            <div class="card-header h6"> Martes y jueves de 19 a 21 hs C.E.F Nº 18 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/HTsRaquYcQ2zVP5K6" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Fútbol</div>
+                </div>
+                <div class="card-header h6 text-center"> Martes y jueves de 19 a 21 hs C.E.F Nº 18 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/HTsRaquYcQ2zVP5K6" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Rugby </div>
-            <div class="card-header h6"> Miércoles y viernes de 17 a 18 hs C.E.F Nº 1 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Rugby</div>
+                </div>
+                <div class="card-header h6 text-center"> Miércoles y viernes de 17 a 18 hs C.E.F Nº 1 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Handball </div>
-            <div class="card-header h6"> Lunes y miércoles de 18 a 20 hs C.E.F Nº 18 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/HTsRaquYcQ2zVP5K6" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Handball</div>
+                </div>
+                <div class="card-header h6 text-center"> Lunes y miércoles de 18 a 20 hs C.E.F Nº 18 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/HTsRaquYcQ2zVP5K6" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Vóley </div>
-            <div class="card-header h6"> Martes y jueves de 20 a 22 hs C.E.F Nº 18 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/HTsRaquYcQ2zVP5K6" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Vóley</div>
+                </div>
+                <div class="card-header h6 text-center"> Martes y jueves de 20 a 22 hs C.E.F Nº 18 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/HTsRaquYcQ2zVP5K6" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Atletismo </div>
-            <div class="card-header h6"> Miércoles y viernes de 17 a 18 hs C.E.F Nº 1 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Atletismo</div>
+                </div>
+                <div class="card-header h6 text-center"> Miércoles y viernes de 17 a 18 hs C.E.F Nº 1 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/s9DqAdhpZmttauV99" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Yoga </div>
-            <div class="card-header h6"> martes 18hs a 20 hs. San Lorenzo 635 </div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/vYonV3NULofQMo9YA" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Yoga</div>
+                </div>
+                <div class="card-header h6 text-center"> martes 18hs a 20 hs. San Lorenzo 635 </div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/vYonV3NULofQMo9YA" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Danzas Arabes </div>
-            <div class="card-header h6"> Lunes, miércoles y viernes de 17 a 20 hs. Venezuela 2771 Bº Progreso</div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/dYMddgCQTez7SCKX7" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Danzas Arabes</div>
+                </div>
+                <div class="card-header h6 text-center"> Lunes, miércoles y viernes de 17 a 20 hs. Venezuela 2771 Bº Progreso</div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/dYMddgCQTez7SCKX7" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-<div class="row m-2 text-center">
-    <div class="col">
-        <div class="card">
-            <div class="card-body  h5 bg-dark text-white"> Taekwondo </div>
-            <div class="card-header h6"> Martes y viernes a partir de las 21 hs. Crossland - Heroes Civiles 2060</div>
-            <div class="card-footer"><a href="https://maps.app.goo.gl/ikMPe4EAQcsUBUgV7" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a></div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0">
+                <div class="card-body bg-dark text-white text-center rounded-top">
+                    <div class="h5">Taekwondo</div>
+                </div>
+                <div class="card-header h6 text-center"> Martes y viernes a partir de las 21 hs. Crossland - Heroes Civiles 2060</div>
+                <div class="card-footer text-center bg-white border-0">
+                    <a href="https://maps.app.goo.gl/ikMPe4EAQcsUBUgV7" target="_blank" rel="noopener noreferrer" class="btn btn-dark bi-geo-alt"></a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
